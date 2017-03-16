@@ -1,7 +1,10 @@
+import 'babel-polyfill';
 import React from 'react';
 import {render} from 'react-dom';
+import {BrowserRouter} from 'react-router-dom';
+import App from './components/App';
 
 render(
-  <h1>Hey Hey Hey</h1>,
+  <BrowserRouter><App /></BrowserRouter>,
   document.getElementById('app')
 );
