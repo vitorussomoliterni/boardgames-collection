@@ -1,17 +1,18 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-class Header extends React.Component {
-    render() {
-        return(
-            <nav className="navbar navbar-inverse bg-inverse">
-                <ul className="nav navbar-nav">
-                    <li className="nav-item"><Link className="nav-link"to="/">Home</Link></li>
-                    <li className="nav-item"><Link className="nav-link"to="/about">About</Link></li>
+const Header = () => {
+    return(
+        <nav className="navbar navbar-inverse bg-inverse navbar-toggleable-md">
+            <div className="collapse navbar-collapse">
+                <ul className="navbar-nav mr-auto">
+                    <li className="nav-item"><Link className="nav-link" to="/">Home</Link></li>
+                    <li className="nav-item"><Link className="nav-link" to="/about">About</Link></li>
+                    <li className="nav-item"><Link className="nav-link" to="/games">Games</Link></li>
                 </ul>
-            </nav>
-        );
-    }
-}
+            </div>
+        </nav>
+    );
+};
 
 export default Header;
