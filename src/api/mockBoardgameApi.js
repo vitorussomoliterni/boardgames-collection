@@ -40,7 +40,7 @@ class BoardgameApi {
             setTimeout(() => {
                 const minBoardgameTitleLength = 3;
                 if (boardgame.title.length < minBoardgameTitleLength) {
-                    reject(`Title must be at least ${minBoardgameTitleLength} characters.`)
+                    reject(`Title must be at least ${minBoardgameTitleLength} characters.`);
                 }
 
                 if (boardgame.title) {
