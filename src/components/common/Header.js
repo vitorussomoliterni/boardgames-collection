@@ -7,8 +7,8 @@ const Header = () => {
             <div className="collapse navbar-collapse">
                 <ul className="navbar-nav mr-auto">
                     <li className="nav-item"><Link className="nav-link" to="/">Home</Link></li>
-                    <li className="nav-item"><Link className="nav-link" to="/about">About</Link></li>
                     <li className="nav-item"><Link className="nav-link" to="/games">Games</Link></li>
+                    <li className="nav-item"><Link className="nav-link" to="/about">About</Link></li>
                 </ul>
             </div>
         </nav>

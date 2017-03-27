@@ -5,7 +5,7 @@ class About extends React.Component {
         return(
             <div>
                 <h1>About</h1>
-                <p>Some words will go here.</p>
+                <p>In this project I try out my React and Redux skills to build an interactive boardgame collection.</p>
             </div>
         );
     }
