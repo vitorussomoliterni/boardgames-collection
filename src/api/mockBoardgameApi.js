@@ -4,19 +4,19 @@ const boardgames = [
     {
         id: "twilight-struggle",
         title: "Twilight Struggle",
-        playersNumber: "2",
+        numberOfPlayers: "2",
         score: 5
     },
     {
         id: "terra-mystica",
         title: "Terra Mystica",
-        playersNumber: "2-5",
+        numberOfPlayers: "2-5",
         score: 5
     },
     {
         id: "star-realms",
         title: "Star Realms",
-        playersNumber: "2",
+        numberOfPlayers: "2",
         score: 4
     },
 ];
