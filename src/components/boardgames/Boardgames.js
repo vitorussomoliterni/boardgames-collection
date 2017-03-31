@@ -1,6 +1,11 @@
 import React from 'react';
+import {BrowserRouter} from 'react-router-dom';
 
 class Boardgames extends React.Component {
+    redirectToAddBoardgamePage() {
+        BrowserRouter.push('/boardgame');
+    }
+
     render() {
         return (
             <div>
@@ -8,6 +13,7 @@ class Boardgames extends React.Component {
                 <input type="submit"
                     value="Add Game"
                     className="btn btn-primary"
+                    onClick={this.redirectToAddBoardgamePage}
                 />
             </div>
         );
