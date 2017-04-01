@@ -1,20 +1,12 @@
 import React from 'react';
-import {BrowserRouter} from 'react-router-dom';
+import { Link } from 'react-router';
 
 class Boardgames extends React.Component {
-    redirectToAddBoardgamePage() {
-        BrowserRouter.push('/boardgame');
-    }
-
     render() {
         return (
             <div>
                 <h1>Boardgames</h1>
-                <input type="submit"
-                    value="Add Game"
-                    className="btn btn-primary"
-                    onClick={this.redirectToAddBoardgamePage}
-                />
+                <Link to="/game" className="btn btn-default">Add A Game</Link>
             </div>
         );
     }
