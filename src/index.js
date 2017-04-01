@@ -4,11 +4,10 @@ import { render } from 'react-dom';
 import { Router } from 'react-router';
 import App from './components/App';
 import createBrowserHistory from 'history/createBrowserHistory';
-import configureStore from './store/configureStore';
+import store from './store/configureStore';
 import { Provider } from 'react-redux';
 
 const history = createBrowserHistory();
-const store = configureStore();
 
 render(
   <Provider store={store}>

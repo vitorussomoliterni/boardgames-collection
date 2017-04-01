@@ -27,11 +27,12 @@ const generateId = (boardgame) => {
 
 class BoardgameApi {
     static getAllBoardgames() {
-        return new Promise((resolve, reject) => {
-            setTimeout (() => {
-                resolve(Object.assi ([], boardgames));
-            }, 0);
-        });
+        // return new Promise((resolve, reject) => {
+        //     setTimeout (() => {
+        //         resolve(Object.assign ([], boardgames));
+        //     }, 0);
+        // });
+        return boardgames;
     }
 
     static saveBoardgame(boardgame) {

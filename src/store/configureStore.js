@@ -1,9 +1,12 @@
 import { createStore } from 'redux';
 import rootReducer from '../reducers';
 
-export default function configureStore(initialState) {
-    return createStore(
-        rootReducer,
-        initialState
-    );
-}
+import boardgames from '../data/boardgames';
+
+const defaultState = {
+    boardgames
+};
+
+const store = createStore(rootReducer, defaultState);
+
+export default store;
