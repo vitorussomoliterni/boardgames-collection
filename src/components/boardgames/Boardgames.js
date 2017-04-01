@@ -11,8 +11,8 @@ class Boardgames extends React.Component {
         return (
             <div>
                 <h1>Boardgames</h1>
-                <Link to="/game" className="btn btn-primary">Add A Game</Link>
                 <BoardgameList boardgames={boardgames} />
+                <Link to="/game" className="btn btn-primary">Add A Game</Link>
             </div>
         );
     }
