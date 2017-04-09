@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Route } from 'react-router-dom';
 import HomePage from './HomePage';
 import BoardgamesPage from './boardgames/BoardgamesPage';
-import Header from './Header';
 import AboutPage from './AboutPage';
 
 const Routes = () => {
