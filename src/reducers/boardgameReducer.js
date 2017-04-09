@@ -11,9 +11,6 @@ const initialState = {
 
 export default function boardgameReducer(state = initialState.boardgames, action) {
     switch(action.type) {
-        case types.LOAD_GAMES:
-            return action.boardgames;
-
         case types.CREATE_GAME:
             return [
                 ...state,
