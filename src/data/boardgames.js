@@ -1,4 +1,4 @@
-const boardgames = [
+const BoardgamesData = [
   {
     id: "twilight-struggle",
     title: "Twilight Struggle",
@@ -19,4 +19,4 @@ const boardgames = [
   }
 ];
 
-export default boardgames;
+export default BoardgamesData;
