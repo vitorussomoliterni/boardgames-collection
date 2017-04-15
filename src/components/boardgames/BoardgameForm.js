@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 
 const BoardgameForm = ({ boardgame }) => {
-  const options = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  const options = [1, 2, 3, 4, 5];
 
   if (boardgame === undefined) {
     boardgame = {};
@@ -41,8 +41,8 @@ const BoardgameForm = ({ boardgame }) => {
             value={boardgame.score}
             className="form-control"
           >
-            {options.map(option => {
-              return <option key={option} value={option}>{option}</option>;
+            {options.map(o => {
+              return <option key={o} value={o}>{o}</option>;
                 })}
           </select>
         </div>

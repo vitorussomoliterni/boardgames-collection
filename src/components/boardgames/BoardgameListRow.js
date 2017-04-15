@@ -6,7 +6,7 @@ const BoardgameListRow = ({boardgame}) => {
     <tr>
       <td><Link to={'/boardgame/' + boardgame.id}>{boardgame.title}</Link></td>
       <td>{boardgame.numberOfPlayers}</td>
-      <td>{boardgame.score}</td>
+      <td>{boardgame.score} / 5</td>
     </tr>
   );
 };
