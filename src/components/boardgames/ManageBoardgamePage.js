@@ -21,9 +21,9 @@ class ManageBoardgamePage extends React.Component {
     );
   }
 }
-/*
+
 ManageBoardgamePage.propTypes = {
-  match : PropTypes.array.isRequired()
-};*/
+  match : PropTypes.array.isRequired
+};
 
 export default ManageBoardgamePage;
