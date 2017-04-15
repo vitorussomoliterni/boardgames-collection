@@ -11,7 +11,6 @@ const Routes = () => {
       <Route exact path="/" component={HomePage} />
       <Route path="/about" component={AboutPage} />
       <Route exact path="/boardgames" component={BoardgamesPage} />
-      <Route exact path="/boardgame/manage" component={ManageBoardgamePage} />
       <Route exact path="/boardgame/:id" component={ManageBoardgamePage} />
     </div>
   );
