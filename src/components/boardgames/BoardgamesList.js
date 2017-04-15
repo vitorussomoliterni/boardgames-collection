@@ -1,17 +1,8 @@
-import React from 'react';
-import BoardgamesData from '../../data/boardgames';
+import React, { PropTypes } from 'react';
 import BoardgameListRow from './BoardgameListRow';
 
-class BoardgameList extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      boardgames: BoardgamesData
-    };
-  }
-
-  render() {
-    return (
+const BoardgameList = ({boardgames}) => {
+  return (
       <table className="table">
         <thead>
           <tr>
@@ -21,13 +12,16 @@ class BoardgameList extends React.Component {
           </tr>
         </thead>
         <tbody>
-          {this.state.boardgames.map(boardgame => 
+          {boardgames.map(boardgame => 
           <BoardgameListRow key={boardgame.id} boardgame={boardgame} />
                   )}
         </tbody>
       </table>
     );
-  }
-}
+};
+
+BoardgameList.propTypes = {
+  boardgames: PropTypes.array.isRequired
+};
 
 export default BoardgameList;

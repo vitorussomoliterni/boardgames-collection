@@ -3,10 +3,6 @@ import React, { PropTypes } from 'react';
 const BoardgameForm = ({ boardgame }) => {
   const options = [1, 2, 3, 4, 5];
 
-  if (boardgame === undefined) {
-    boardgame = {};
-  }
-
   return (
     <form>
       <div className="row">
