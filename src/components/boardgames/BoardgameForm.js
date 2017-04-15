@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const BoardgameForm = ({ boardgame }) => {
   const options = [1, 2, 3, 4, 5];

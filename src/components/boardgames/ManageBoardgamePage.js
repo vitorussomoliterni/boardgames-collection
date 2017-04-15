@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import BoardgameForm from './BoardgameForm';
 import BoardgamesData from '../../data/boardgames';
 
@@ -23,7 +24,7 @@ class ManageBoardgamePage extends React.Component {
 }
 
 ManageBoardgamePage.propTypes = {
-  match : PropTypes.array.isRequired
+  match: PropTypes.object.isRequired
 };
 
 export default ManageBoardgamePage;
