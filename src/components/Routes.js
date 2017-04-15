@@ -12,6 +12,7 @@ const Routes = () => {
       <Route path="/about" component={AboutPage} />
       <Route exact path="/boardgames" component={BoardgamesPage} />
       <Route exact path="/boardgame/manage" component={ManageBoardgamePage} />
+      <Route exact path="/boardgame/:id" component={ManageBoardgamePage} />
     </div>
   );
 };

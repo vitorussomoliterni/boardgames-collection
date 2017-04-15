@@ -6,10 +6,15 @@ class ManageBoardgamePage extends React.Component {
     return (
       <div>
         <h1>Manage Game</h1>
-        <BoardgameForm />
+        <BoardgameForm boardgame={this.props.boardgame} />
+        <button className="btn btn-primary">Save</button>
       </div>
     );
   }
 }
+
+BoardgameForm.propTypes = {
+  boardgame: PropTypes.object
+};
 
 export default ManageBoardgamePage;
