@@ -1,4 +1,4 @@
-let BoardgamesData = [
+const BoardgamesData = [
   {
     id: "twilight-struggle",
     title: "Twilight Struggle",
