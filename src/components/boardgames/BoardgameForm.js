@@ -14,7 +14,7 @@ const BoardgameForm = ({ boardgame }) => {
             name="title"
             className="form-control"
             placeholder="Boardgame Title"
-            value={boardgame.title}
+            defaultValue={boardgame.title}
           />
         </div>
       </div>
@@ -26,7 +26,7 @@ const BoardgameForm = ({ boardgame }) => {
             name="title"
             className="form-control"
             placeholder="Number of Players"
-            value={boardgame.numberOfPlayers}
+            defaultValue={boardgame.numberOfPlayers}
           />
         </div>
       </div>
@@ -35,12 +35,12 @@ const BoardgameForm = ({ boardgame }) => {
         <div className="field col-md-2">
           <select
             name="score"
-            value={boardgame.score}
+            defaultValue={boardgame.score}
             className="form-control"
           >
             {options.map(o => {
               return <option key={o} value={o}>{o}</option>;
-                })}
+            })}
           </select>
         </div>
       </div>
