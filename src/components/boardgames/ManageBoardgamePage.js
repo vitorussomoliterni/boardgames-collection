@@ -7,8 +7,9 @@ import BoardgamesData from '../../data/boardgames';
 class ManageBoardgamePage extends React.Component {
   constructor(props) {
     super(props);
+    const boardgame = this.getBoardgame();
     this.state = {
-      boardgame: {}
+      boardgame: boardgame
     };
 
     this.updateBoardgameState = this.updateBoardgameState.bind(this);
@@ -41,26 +42,38 @@ class ManageBoardgamePage extends React.Component {
       <div>
         <h1>Manage Game</h1>
         <BoardgameForm
-          boardgame={this.getBoardgame()}
+          boardgame={this.state.boardgame}
           onChange={this.updateBoardgameState}/>
         <Link to="/boardgames"
-              className="btn btn-primary"
+              className="btn btn-primary col-md-2"
               onClick={() => updateBoardgameList(this.state.boardgame)}>Save</Link>
+        {this.state.boardgame.id ? // If boardgame object has no id, do not render "Remove" button
+          <Link to="/boardgames"
+            className="btn btn-danger col-md-2 offset-md-3"
+            onClick={() => updateBoardgameList(this.state.boardgame, true)}>Remove</Link>: null}
       </div>
     );
   }
 }
 
-  function updateBoardgameList(boardgame) {
+  function updateBoardgameList(boardgame, toRemove=false) {
+    if (toRemove) {
+      removeBoardgame(boardgame);
+      return;
+    } 
     if (boardgame.id) {
       updateBoardgame(boardgame);
     } else {
       addBoardgame(boardgame);
     }
   }
+  
+  function removeBoardgame(boardgame) {
+    BoardgamesData.splice(BoardgamesData.indexOf(boardgame), 1);
+  }
 
   function updateBoardgame(boardgame) {
-      let boardgameIndex = BoardgamesData.findIndex(b => b.id === boardgame.id);
+      const boardgameIndex = BoardgamesData.findIndex(b => b.id === boardgame.id);
       BoardgamesData[boardgameIndex] = boardgame;
   }
 
