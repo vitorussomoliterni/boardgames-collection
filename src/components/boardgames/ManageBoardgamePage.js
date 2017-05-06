@@ -8,15 +8,30 @@ class ManageBoardgamePage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      boardgame: getBoardgame()
+      boardgame: {}
     };
 
     this.updateBoardgameState = this.updateBoardgameState.bind(this);
   }
 
+  componentDidMount() {
+    const boardgame = BoardgamesData.find(b => b.id === this.props.match.params.id);
+    if (boardgame !== undefined) {
+      return this.setState({boardgame: boardgame});
+    }
+  }
+
+  getBoardgame() {
+    const boardgame = BoardgamesData.find(b => b.id === this.props.match.params.id);
+    if (boardgame !== undefined) {
+      return boardgame;
+    }
+    return {};
+  }
+
   updateBoardgameState(event) {
     const field = event.target.name;
-    let boardgame = this.state.course;
+    let boardgame = this.state.boardgame;
     boardgame[field] = event.target.value;
     return this.setState({boardgame: boardgame});
   }
@@ -26,7 +41,7 @@ class ManageBoardgamePage extends React.Component {
       <div>
         <h1>Manage Game</h1>
         <BoardgameForm
-          boardgame={this.state.boardgame}
+          boardgame={this.getBoardgame()}
           onChange={this.updateBoardgameState}/>
         <Link to="/boardgames"
               className="btn btn-primary"
@@ -36,16 +51,8 @@ class ManageBoardgamePage extends React.Component {
   }
 }
 
-  function getBoardgame() {
-    const boardgame = BoardgamesData.find(b => b.id === this.props.match.params.id);
-    if (boardgame) {
-      return boardgame;
-    }
-    return {};
-  }
-
   function updateBoardgameList(boardgame) {
-    if (boardgame) {
+    if (boardgame.id) {
       updateBoardgame(boardgame);
     } else {
       addBoardgame(boardgame);
@@ -53,7 +60,6 @@ class ManageBoardgamePage extends React.Component {
   }
 
   function updateBoardgame(boardgame) {
-      //console.log(boardgame);
       let boardgameIndex = BoardgamesData.findIndex(b => b.id === boardgame.id);
       BoardgamesData[boardgameIndex] = boardgame;
   }
@@ -64,7 +70,8 @@ class ManageBoardgamePage extends React.Component {
   }
 
 ManageBoardgamePage.propTypes = {
-  match: PropTypes.object.isRequired
+  match: PropTypes.object.isRequired,
+  boardgame: PropTypes.object
 };
 
 export default ManageBoardgamePage;
