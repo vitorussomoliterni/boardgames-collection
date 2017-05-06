@@ -16,7 +16,7 @@ class BoardgamesPage extends React.Component {
 			<div>
 				<h1>Boardgames</h1>
 				<BoardgamesList boardgames={this.state.boardgames} />
-				<Link className="btn btn-primary" to="/boardgame/manage">Add New Game</Link>
+				<Link className="btn btn-primary" to="/boardgames/add">Add New Game</Link>
 			</div>
 		);
 	}

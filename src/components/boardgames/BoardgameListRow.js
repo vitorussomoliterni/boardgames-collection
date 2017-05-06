@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const BoardgameListRow = ({boardgame}) => {
   return (
     <tr>
-      <td><Link to={'/boardgame/' + boardgame.id}>{boardgame.title}</Link></td>
+      <td><Link to={'/boardgames/' + boardgame.id}>{boardgame.title}</Link></td>
       <td>{boardgame.numberOfPlayers}</td>
       <td>{boardgame.score} / 5</td>
     </tr>

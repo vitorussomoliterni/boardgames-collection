@@ -10,8 +10,8 @@ const Routes = () => {
     <div>
       <Route exact path="/" component={HomePage} />
       <Route path="/about" component={AboutPage} />
-      <Route path="/boardgames" component={BoardgamesPage} />
-      <Route path="/boardgame/:id" component={ManageBoardgamePage} />
+      <Route exact path="/boardgames" component={BoardgamesPage} />
+      <Route path="/boardgames/:id" component={ManageBoardgamePage} />
     </div>
   );
 };

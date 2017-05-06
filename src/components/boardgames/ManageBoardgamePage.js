@@ -5,7 +5,38 @@ import BoardgameForm from './BoardgameForm';
 import BoardgamesData from '../../data/boardgames';
 
 class ManageBoardgamePage extends React.Component {
-  getBoardgame() {
+  constructor(props) {
+    super(props);
+    this.state = {
+      boardgame: getBoardgame()
+    };
+
+    this.updateBoardgameState = this.updateBoardgameState.bind(this);
+  }
+
+  updateBoardgameState(event) {
+    const field = event.target.name;
+    let boardgame = this.state.course;
+    boardgame[field] = event.target.value;
+    return this.setState({boardgame: boardgame});
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>Manage Game</h1>
+        <BoardgameForm
+          boardgame={this.state.boardgame}
+          onChange={this.updateBoardgameState}/>
+        <Link to="/boardgames"
+              className="btn btn-primary"
+              onClick={() => updateBoardgameList(this.state.boardgame)}>Save</Link>
+      </div>
+    );
+  }
+}
+
+  function getBoardgame() {
     const boardgame = BoardgamesData.find(b => b.id === this.props.match.params.id);
     if (boardgame) {
       return boardgame;
@@ -13,36 +44,24 @@ class ManageBoardgamePage extends React.Component {
     return {};
   }
 
-  updateBoardgameList(boardgame) {
+  function updateBoardgameList(boardgame) {
     if (boardgame) {
-      this.updateBoardgame(boardgame);
+      updateBoardgame(boardgame);
     } else {
-      this.addBoardgame(boardgame);
+      addBoardgame(boardgame);
     }
   }
 
-  updateBoardgame(boardgame) {
-      let boardgameIndex = BoardgamesData.find(b => b.id === boardgame.id);
+  function updateBoardgame(boardgame) {
+      //console.log(boardgame);
+      let boardgameIndex = BoardgamesData.findIndex(b => b.id === boardgame.id);
       BoardgamesData[boardgameIndex] = boardgame;
   }
 
-  addBoardgame(boardgame) {
+  function addBoardgame(boardgame) {
     boardgame.id = boardgame.title.replace(" ", "-");
     BoardgamesData.push(boardgame);
   }
-
-  render() {
-    return (
-      <div>
-        <h1>Manage Game</h1>
-        <BoardgameForm boardgame={this.getBoardgame()} />
-        <Link to="/boardgames"
-              className="btn btn-primary"
-              onClick={this.updateBoardgameList(this.getBoardgame())}>Save</Link>
-      </div>
-    );
-  }
-}
 
 ManageBoardgamePage.propTypes = {
   match: PropTypes.object.isRequired
