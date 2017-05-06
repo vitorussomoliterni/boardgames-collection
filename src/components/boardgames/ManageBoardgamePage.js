@@ -45,7 +45,7 @@ class ManageBoardgamePage extends React.Component {
           boardgame={this.state.boardgame}
           onChange={this.updateBoardgameState}/>
         <Link to="/boardgames"
-              className="btn btn-primary col-md-2"
+              className="btn btn-success col-md-2"
               onClick={() => updateBoardgameList(this.state.boardgame)}>Save</Link>
         {this.state.boardgame.id ? // If boardgame object has no id, do not render "Remove" button
           <Link to="/boardgames"
